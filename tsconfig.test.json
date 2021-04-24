@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    "baseUrl": "./src/main",
+    "rootDir": "../..",
+    "paths": {
+      "@/*": ["../../src/main/*"]
+    },
+    "types": ["node", "jest"]
+  },
+  "include": [
+    "./src/main/**/*.ts",
+    "./src/test/**/*.ts",
+    "./test/typings/*.d.ts"
+  ]
+}
