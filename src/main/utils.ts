@@ -42,8 +42,13 @@ export function hookStdout(
 	});
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function hookExpressjsRequest(app: any): void {
+export function hookExpressjsRequest(
+	// eslint-disable-next-line @typescript-eslint/ban-types
+	app: { request?: object }
+): void {
+	if (!app.request) {
+		return;
+	}
 	Object.setPrototypeOf(
 		Request.prototype,
 		Object.getPrototypeOf(app.request)
@@ -59,8 +64,13 @@ export function hookExpressjsRequest(app: any): void {
 	});
 }
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-export function hookExpressjsResponse(app: any): void {
+export function hookExpressjsResponse(
+	// eslint-disable-next-line @typescript-eslint/ban-types
+	app: { response?: object }
+): void {
+	if (!app.response) {
+		return;
+	}
 	Object.setPrototypeOf(
 		Response.prototype,
 		Object.getPrototypeOf(app.response)

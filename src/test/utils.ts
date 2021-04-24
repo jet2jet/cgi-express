@@ -97,5 +97,10 @@ describe('utils', () => {
 				DummyClass.prototype
 			);
 		});
+		it(`should do nothing if app.${appFieldName} is not defined`, () => {
+			const app: { [K in typeof appFieldName]?: undefined } = {};
+			hookFunction(app);
+			expect(app[appFieldName]).toBeUndefined();
+		});
 	});
 });

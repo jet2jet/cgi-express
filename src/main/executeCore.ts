@@ -6,6 +6,15 @@ import { hookExpressjsRequest, hookExpressjsResponse } from './utils';
 import Request from './wrapper/Request';
 import Response from './wrapper/Response';
 
+/* eslint-disable @typescript-eslint/ban-types */
+declare module 'express' {
+	interface Application {
+		request?: object;
+		response?: object;
+	}
+}
+/* eslint-enable @typescript-eslint/ban-types */
+
 export default function executeCore(
 	app: express.Application,
 	opts: Options & Required<Pick<Options, 'stdin' | 'stdout' | 'env'>>
