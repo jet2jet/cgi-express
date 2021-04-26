@@ -3,6 +3,7 @@
 .vscode/
 obj/
 /.work/
+/coverage/
 /examples/
 /src/
 /test/

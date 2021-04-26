@@ -1,4 +1,5 @@
 .work/
 .vs/
+coverage/
 dist/
 obj/
