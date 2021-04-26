@@ -24,6 +24,7 @@
   "keywords": [
     "express",
     "cgi",
+    "cgi-script",
     "server",
     "serverless"
   ],
