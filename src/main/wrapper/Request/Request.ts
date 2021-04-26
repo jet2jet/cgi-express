@@ -6,7 +6,9 @@ import getPathInfo from './getPathInfo';
 import getQueryString from './getQueryString';
 import parseHttpVersion from './parseHttpVersion';
 
-// @internal
+/**
+ * 'Request' wrapper class, using stdin (ReadStream) and environment variables
+ */
 export default class Request implements http.IncomingMessage {
 	public aborted: boolean;
 	public httpVersion: string;

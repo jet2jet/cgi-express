@@ -5,6 +5,12 @@ import type Options from './Options';
 import executeCore from './executeCore';
 import { hookStdout } from './utils';
 
+/**
+ * Executes Express.js application as a CGI program.
+ * @param app An Express.js application instance
+ * @param opts Additional options (`Options`) for execution
+ * @returns Promise object which resolves when execution finishes
+ */
 export default function execute(
 	app: express.Application,
 	opts?: Options

@@ -2,7 +2,9 @@ import * as http from 'http';
 
 import type Request from '../Request';
 
-// @internal
+/**
+ * 'Response' wrapper class, using Request and stdout (WritableStream)
+ */
 export default class Response extends http.ServerResponse {
 	constructor(
 		req: Request,

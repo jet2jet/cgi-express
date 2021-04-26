@@ -7,6 +7,7 @@ import Request from './wrapper/Request';
 import Response from './wrapper/Response';
 
 /* eslint-disable @typescript-eslint/ban-types */
+// @internal
 declare module 'express' {
 	interface Application {
 		request?: object;
@@ -15,6 +16,12 @@ declare module 'express' {
 }
 /* eslint-enable @typescript-eslint/ban-types */
 
+/**
+ * Executes Express.js application as a CGI program, with custom stdin/stdout/env data.
+ * @param app An Express.js application instance
+ * @param opts Additional options (`Options`) for execution (stdin/stdout/env are not omittable)
+ * @returns Promise object which resolves when execution finishes
+ */
 export default function executeCore(
 	app: express.Application,
 	opts: Options & Required<Pick<Options, 'stdin' | 'stdout' | 'env'>>
