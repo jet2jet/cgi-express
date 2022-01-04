@@ -1,6 +1,6 @@
 {
   "name": "cgi-express",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Executes Express.js application as a CGI program",
   "engines": {
     "node": ">=10"
