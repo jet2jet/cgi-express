@@ -2,6 +2,13 @@ import * as http from 'http';
 
 import type Request from '../Request';
 
+declare module 'http' {
+	interface OutgoingMessage {
+		// eslint-disable-next-line @typescript-eslint/method-signature-style
+		_storeHeader(firstLine: string, headers: unknown): void;
+	}
+}
+
 /**
  * 'Response' wrapper class, using Request and stdout (WritableStream)
  */
@@ -31,5 +38,18 @@ export default class Response extends http.ServerResponse {
 		if (endCallback) {
 			endCallback();
 		}
+	}
+
+	// override '_storeHeader'
+	public _storeHeader(firstLine: string, headers: unknown): void {
+		// Parse the line such as `HTTP/1.1 200 OK\r\n` and pick up status code and message
+		const ra = /^\S+\s+(\d+)(?:\s+(.*))?/.exec(firstLine);
+		if (ra != null) {
+			// Rewrite to `Status: 200 OK\r\n`
+			firstLine = `Status: ${ra[1]}${
+				ra[2] != null ? ` ${ra[2]}` : ''
+			}\r\n`;
+		}
+		super._storeHeader(firstLine, headers);
 	}
 }
