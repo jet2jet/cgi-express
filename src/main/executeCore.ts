@@ -1,10 +1,10 @@
 import type * as express from 'express';
 
-import type Options from './Options';
+import type Options from './Options.js';
 
-import { hookExpressjsRequest, hookExpressjsResponse } from './utils';
-import Request from './wrapper/Request';
-import Response from './wrapper/Response';
+import { hookExpressjsRequest, hookExpressjsResponse } from './utils.js';
+import Request from './wrapper/Request/index.js';
+import Response from './wrapper/Response/index.js';
 
 /* eslint-disable @typescript-eslint/ban-types */
 // @internal

@@ -1,2 +1,2 @@
 // @internal
-export { default } from './Request';
+export { default } from './Request.js';

@@ -1,9 +1,9 @@
 import type * as express from 'express';
 
-import type Options from './Options';
+import type Options from './Options.js';
 
-import executeCore from './executeCore';
-import { hookStdout } from './utils';
+import executeCore from './executeCore.js';
+import { hookStdout } from './utils.js';
 
 /**
  * Executes Express.js application as a CGI program.

@@ -1,5 +1,5 @@
 import { Socket } from 'net';
-import { hookStdout, readEnv } from '@/utils';
+import { hookStdout, readEnv } from '@/utils.js';
 
 describe('utils', () => {
 	describe('readEnv', () => {

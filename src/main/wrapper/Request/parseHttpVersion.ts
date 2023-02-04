@@ -1,4 +1,4 @@
-import { readEnv } from '../../utils';
+import { readEnv } from '../../utils.js';
 
 // @internal
 const DEFAULT_VERSION = [1, 0] as const;

@@ -1,6 +1,6 @@
 import * as http from 'http';
 
-import type Request from '../Request';
+import type Request from '../Request/index.js';
 
 declare module 'http' {
 	interface OutgoingMessage {

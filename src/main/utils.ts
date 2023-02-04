@@ -1,7 +1,7 @@
 import { Socket } from 'net';
 
-import Request from './wrapper/Request';
-import Response from './wrapper/Response';
+import Request from './wrapper/Request/index.js';
+import Response from './wrapper/Response/index.js';
 
 // @internal
 export function readEnv(

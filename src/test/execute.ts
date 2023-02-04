@@ -1,8 +1,8 @@
 import { mocked } from 'ts-jest/utils';
 
-import execute from '@/execute';
-import executeCore from '@/executeCore';
-import { hookStdout } from '@/utils';
+import execute from '@/execute.js';
+import executeCore from '@/executeCore.js';
+import { hookStdout } from '@/utils.js';
 
 jest.mock('@/executeCore');
 jest.mock('@/utils');

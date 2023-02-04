@@ -1,10 +1,10 @@
 import type * as http from 'http';
 import type { Socket } from 'net';
 
-import getMethod from './getMethod';
-import getPathInfo from './getPathInfo';
-import getQueryString from './getQueryString';
-import parseHttpVersion from './parseHttpVersion';
+import getMethod from './getMethod.js';
+import getPathInfo from './getPathInfo.js';
+import getQueryString from './getQueryString.js';
+import parseHttpVersion from './parseHttpVersion.js';
 
 /**
  * 'Request' wrapper class, using stdin (ReadStream) and environment variables

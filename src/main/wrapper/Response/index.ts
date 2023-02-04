@@ -1,1 +1,2 @@
-export { default } from './Response';
+// @internal
+export { default } from './Response.js';

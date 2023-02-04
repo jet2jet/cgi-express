@@ -1,4 +1,4 @@
-import { readEnv } from '../../utils';
+import { readEnv } from '../../utils.js';
 
 // @internal
 export default function getQueryString(
